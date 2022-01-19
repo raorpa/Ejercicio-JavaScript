@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nombre y apellidos</title>
+</head>
+<body>
+    <script>
+        var str = prompt("Introduce tu nombre, apellidos y año de nacimiento (ex: Pepe Perez Sanchezz 1990):");
+        var strArray = str.split(" ");
+        var username = strArray[0].substring(0,1) +
+        strArray[1] +
+        strArray[2].substring(0,1)+
+        strArray[3].substring(2,4);
+
+        username = username.toLocaleLowerCase();
+
+        document.writeln("Cadena en mayúsculas: " + str.toUpperCase() + "<br>");
+        document.writeln("Muestra de nombre, apellido1, apellido2 y año, cada cual en una linea: <br>");
+        strArray.forEach(element => {
+            document.writeln(element + "<br>");
+        });
+
+        document.write("Nombrede usuario "+ username + "<br>");
+
+        var nombreCompleto = strArray[0] + strArray[1] + strArray[2];
+        var nVocales = 0;
+        for(i=0; i<nombreCompleto.length; i++){
+            nombreCompleto=nombreCompleto.toLocaleLowerCase();
+            if(nombreCompleto[i]=="a"||nombreCompleto[i]=="e"||nombreCompleto[i]=="i"|| nombreCompleto[i]=="o"|| nombreCompleto[i]=="u"){
+               nVocales++; 
+            };            
+        }
+
+        document.writeln("La cadena nombre y apellidos contiene: "+nVocales+" vocales <br>");
+        var nCarracteres = nombreCompleto + strArray[3];
+        document.writeln("El tamaño total de la cadena es de : "+ nCarracteres.length + " caracteres <br>");
+        document.writeln("El tamaño de la cadena del nombre completo es: "+ nombreCompleto.length + " caracteres");
+
+
+    </script>
+</body>
+</html>
